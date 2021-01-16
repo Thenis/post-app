@@ -1,9 +1,15 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  HostListener,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { Post } from 'src/app/models/post';
 
 export enum PostContentEnum {
-  ID,
-  POST_ID,
+  ID = 'id',
+  POST_ID = 'post-id',
 }
 
 @Component({
@@ -21,6 +27,11 @@ export class PostComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  @HostBinding('class')
+  get activeContentClass() {
+    return this.activePostContent;
+  }
 
   @HostListener('click')
   handlePostClick() {

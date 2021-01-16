@@ -1,0 +1,7 @@
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+  column-gap: 3px;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 50px;
+}
